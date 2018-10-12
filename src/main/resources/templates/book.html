@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: header">
+
+</head>
+
+<body>
+
+<nav th:replace="layout/header :: navbar"></nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1 th:text="${book.name}">All Books</h1>
+        <img th:src="${book.mediumImage}">
+        <h2 th:text="'Price: ' + ${book.salePrice} + '$'"></h2>
+        <span th:text="${book.longDescription}"></span>
+    </div>
+
+</div>
+
+<footer th:replace="layout/footer :: footer"></footer>
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

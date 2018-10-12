@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header :: header">
+
+</head>
+
+<body>
+
+	<nav th:replace="layout/header :: navbar"></nav>
+
+	<div class="container">
+
+		<div class="starter-template">
+			<h1>All Books</h1>
+			<!--<h2></h2>-->
+            <div class="container">
+                <div class="col-lg-10">
+                    <div class="row" th:each="bookRow : ${bookRows}">
+                        <div class="col-md-3 clickable" th:onclick="'window.location = \'/book/' + ${book.itemId} + '\''" th:each="book : ${bookRow}">
+                            <div class="card">
+                                <img class="card-img-top text-center" th:src="${book.mediumImage}">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${book.name}"></h5>
+                                    <p class="card-text" th:text="${book.salePrice}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <a th:href="@{'/books/' + ${nextPageMaxId}}">Next Page</a>
+                </div>
+            </div>
+
+		</div>
+
+	</div>
+
+    <footer th:replace="layout/footer :: footer"></footer>
+
+	<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+	

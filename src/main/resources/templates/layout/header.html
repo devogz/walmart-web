@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header" >
+    <title th:text="${title}">Layout Generic Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="../webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse" th:fragment="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/" th:text="${title}"></a>
+            </div>
+        </div>
+    </nav>
+
+    <footer class="page-footer font-small blue" th:fragment="footer">
+        Wallmart Books
+    </footer>
+</body>
+</html>
+<!--  this is header -->
